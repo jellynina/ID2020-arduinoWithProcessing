@@ -21,11 +21,12 @@ void loop() {
     if(digitalRead(Btn[i]) == LOW){
       state = (i+1);
       if(oldState != state){
+        Serial.println(state);
         oldState = state;
         }
       }
     }
-    Serial.println(state);
+    
   delay(500);
 
 }

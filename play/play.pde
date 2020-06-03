@@ -13,35 +13,42 @@ String[] len = {"totoro.mov","mov2.mov","mov3.mov"};
 
 void setup() {
   
-  //myPort = new Serial(this, "/dev/cu.usbmodem144101", 9600);
-  size(500, 1200); // the ration of the video
+  myPort = new Serial(this, "/dev/cu.usbmodem144101", 9600);
+  size(1476, 1576); // the ration of the video
   for(int i =0; i<videoNum; i++){
-    playlist[i] = new Movie(this,len[i]);//new Movie(this, "ch"+(i+1)+".mp4");
-    playlist[i].play();
+    playlist[i] = new Movie(this,len[i]);
   }
 }
 
 void draw() {
-  background(0);
+  playlist[currentMovieIndex].play();
   image(playlist[currentMovieIndex],0,0);
 }
 
 // Called every time a new frame is available to read
 void movieEvent(Movie m){
   m.read();
-  //message = myPort.readStringUntil(newLine);
-  message = "2";
-  switch (message){
-    case "0":
-      currentMovieIndex = 0;
-      println("play 0");
-      break;
-    case "1":
-      currentMovieIndex = 1;
-      break;
-    case "2":
-      currentMovieIndex = 2;
-      break;
+  message = myPort.readStringUntil(newLine);
+  if(message == null){
+    currentMovieIndex = 0;
+  } else {
+    switch (message){
+      case "0":
+        currentMovieIndex = 0;
+        println("play 0");
+        break;
+      case "1":
+        currentMovieIndex = 1;
+        println("play 1");
+        break;
+      case "2":
+        currentMovieIndex = 2;
+        println("play 2");
+        break;
+      default:
+       currentMovieIndex = 0;
+       break;
+    }
   }
   playlist[currentMovieIndex].read();
   

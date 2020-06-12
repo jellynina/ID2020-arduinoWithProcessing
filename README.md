@@ -3,6 +3,7 @@
 
 ## 參考資料
 
+- **[How to builf a vidro player with control](https://oxmond.com/how-to-build-a-video-player-with-scrub-control-in-unity/)** : 還不錯的教學
 - [【米飯工作坊】Unity互動應用入門：Unity與Arduino溝通互動](https://www.youtube.com/watch?v=0keRacr_8lk&fbclid=IwAR18p0sQ63yyWFD8nh6RB7cpJb0wV6gNojBwnAjrD61wEYaThAzgU1kiJ5o)
 -[Unity-播放影片新版方法 VideoPlayer](https://www.youtube.com/watch?v=tTJJav4ufbw&fbclid=IwAR1DWgslWdkl5FBI6uMBeLy061vpX8lkByWzruG-TSCopkTbkeEhkofOUoI)
 
